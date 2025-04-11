@@ -100,11 +100,6 @@ for (let i = 0; i < mockData.length; i++) {
     const isGenderInterestMatch = person.gender_interest === profile.gender;
     const isLocationMatch = person.location === profile.location;
     
-    console.log(`Checking profile: ${person.first_name} ${person.last_name}`);
-    console.log("Age Range Match:", isAgeRangeMatch);
-    console.log("Gender Match:", isGenderMatch);
-    console.log("Gender Interest Match:", isGenderInterestMatch);
-    console.log("Location Match:", isLocationMatch);
     
     if (isAgeRangeMatch && isGenderMatch && isGenderInterestMatch && isLocationMatch) {
         matches.push(person);
@@ -113,4 +108,11 @@ for (let i = 0; i < mockData.length; i++) {
 
 // Display the total number of matches
 console.log(`Total Matches: ${matches.length}`);
-console.table(matches);
+
+
+// show matched profiles in a table
+if (matches.length > 0){
+    console.table(matches); 
+} else {
+    console.log("No Matches found");
+}
